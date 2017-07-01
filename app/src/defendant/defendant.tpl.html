@@ -26,13 +26,11 @@
                     <md-tab md-active="vm.activeStatus.secondTabActive"
                             ng-disabled="vm.locks.secondTabLock"
                             label="2. Suggested Solution">
-                        <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
-                            <div>Solution provided in claim video</div>
-                            <br/>
-                            <md-button class="md-primary md-raised block" ng-click="vm.sendResponse(tab)">
-                                Submit Response
-                            </md-button>
-                        </div>
+                        <div>Solution provided in claim video</div>
+                        <br/>
+                        <md-button class="md-primary md-raised block" ng-click="vm.sendResponse(tab)">
+                            Submit Response
+                        </md-button>
                     </md-tab>
                 </md-tabs>
             </md-content>
