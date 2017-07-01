@@ -19,7 +19,7 @@
                                 md-active="vm.activeStatus.firstTabActive">
                             <md-input-container>
                                 <span><b>Who is your claim against?</b></span>
-                                <input ng-model="claimee" required md-maxlength="100" minlength="0">
+                                <input ng-model="vm.claimee" required md-maxlength="100" minlength="0">
                             </md-input-container>
                             <md-button class="md-primary md-raised" ng-click="vm.searchClaimee($event)">
                                 Search
@@ -97,8 +97,10 @@
         </div>
     </md-content>
 
-    <!-- Container #4 -->
-    <md-content flex id="right-content">
-
+    <md-content flex id="right-content" ng-show="vm.inCreateMode">
+        <div class="claimee-container">
+            <span><b>You are claiming against:    </b></span>
+            <span>{{vm.claimee}}</span>
+        </div>
     </md-content>
 </div>
