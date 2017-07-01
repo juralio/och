@@ -1,7 +1,7 @@
 function ClaimantController() {
     var vm = this;
 
-    vm.message = 'fsdf';
+    $rootScope.username = 'Martin Smith';
 
     vm.inCreateMode = false;
     vm.enterCreateClaimMode = enterCreateClaimMode;
@@ -75,4 +75,4 @@ function ClaimantController() {
     }
 }
 
-export default [ClaimantController];
+export default ["$rootScope", ClaimantController];
