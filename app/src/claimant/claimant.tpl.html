@@ -1,6 +1,9 @@
 <div flex layout="row">
     <md-content flex id="content" style="border-right: 1px solid black;">
         <div class="view-mode" ng-show="!vm.inCreateMode">
+            <h1>
+                You currently have no active claims
+            </h1>
             <md-button class="md-primary md-raised" ng-click="vm.enterCreateClaimMode($event)">
                 Create Claim
             </md-button>
@@ -41,7 +44,8 @@
                                 ng-disabled="vm.locks.secondTabLock"
                                 md-active="vm.activeStatus.secondTabActive">
                             <md-input-container>
-                                <div><b>We’re now going to ask you about the problem and how you’d like it resolved. </b></div>
+                                <div><b>We’re now going to ask you about the problem and how you’d like it
+                                    resolved. </b></div>
                                 </br>
                                 <div><b>Please summarise the problem </b></div>
                                 <div>* You can write a summary, upload a video (time limit: 2 minutes) or both</div>
@@ -67,7 +71,7 @@
     </md-content>
 
     <!-- Container #4 -->
-    <md-content flex id="content">
+    <md-content flex id="content" ng-show="vm.inCreateMode">
 
     </md-content>
 </div>
