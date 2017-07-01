@@ -55,7 +55,7 @@
                                 label="Step Two"
                                 ng-disabled="vm.locks.secondTabLock"
                                 md-active="vm.activeStatus.secondTabActive">
-                            <divclass="prompt">We’re now going to ask you about the problem and how you’d like it
+                            <div class="prompt">We’re now going to ask you about the problem and how you’d like it
                                     resolved. </div>
                                 </br>
                                 <div><b>Please summarise the problem </b></div>
@@ -99,11 +99,16 @@
                                     <div class="solution-input">
                                         <md-input-container>
                                             <input ng-model="vm.problemSolution" required md-maxlength="500" minlength="0"
-                                                   ng-disabled="!vm.ownSolution">
+                                                   ng-disabled="vm.ownSolution">
                                         </md-input-container>
                                     </div>
                                 </div>
                             </md-input-container>
+                            <div class="button-container">
+                                <md-button class="md-primary md-raised" ng-click="vm.confirmClaimee($event)">
+                                    Submit Claim
+                                </md-button>
+                            </div>
                         </md-tab>
                     </md-tabs>
                 </md-content>

@@ -191,3 +191,12 @@ span.name {
 .address-lines {
     margin-left: 18px;
 }
+
+.button-container {
+    text-align: right;
+}
+
+.right-content-container {
+    padding-top: 25px;
+    padding-left: 30px;
+}
