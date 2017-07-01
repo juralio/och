@@ -1,7 +1,7 @@
-function DefendantController() {
+function DefendantController($rootScope) {
   var vm = this;
 
-  vm.message = 'fsdf';
+  $rootScope.username = 'Bill’s Kitchens Ltd';
 
   vm.sendResponse = sendResponse;
   vm.tabs = [
@@ -14,4 +14,4 @@ function DefendantController() {
   }
 }
 
-export default [DefendantController];
+export default ['$rootScope', DefendantController];
