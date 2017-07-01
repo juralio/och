@@ -16,6 +16,7 @@ System.config({
     "angular-material": "github:angular/bower-material@master",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
     "angular-mocks": "github:angular/bower-angular-mocks@1.5.8",
+    "angular-route": "github:angular/bower-angular-route@1.5.8",
     "css": "github:systemjs/plugin-css@0.1.21",
     "json": "github:systemjs/plugin-json@0.1.0",
     "text": "github:systemjs/plugin-text@0.0.4",
@@ -28,6 +29,9 @@ System.config({
       "angular": "github:angular/bower-angular@1.5.8"
     },
     "github:angular/bower-angular-messages@1.5.8": {
+      "angular": "github:angular/bower-angular@1.5.8"
+    },
+    "github:angular/bower-angular-route@1.5.8": {
       "angular": "github:angular/bower-angular@1.5.8"
     },
     "github:angular/bower-material@master": {

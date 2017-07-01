@@ -20,5 +20,8 @@
   "github:angular/bower-angular@1.5.8": {},
   "github:angular/bower-angular-animate@1.5.8": {
     "angular": "jspm:angular@^1.3.0"
+  },
+  "github:angular/bower-angular-route@1.5.8": {
+    "angular": "jspm:angular@^1.3.0"
   }
 }
