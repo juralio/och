@@ -22,11 +22,7 @@ html, body {
 
 .main-header h1 {
     font-weight: bold;
-}
-
-.main-header h2 {
     flex: 1;
-    text-align: right;
 }
 
 md-toolbar h1 {
@@ -147,4 +143,21 @@ span.name {
     width: 55px;
     height: 42px;
     background-repeat: no-repeat;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
+}
+
+.user-container h2 {
+    display: inline-block;
+}
+
+.user-icon {
+    background-image: url(../assets/martin.png);
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: 60px;
 }

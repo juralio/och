@@ -15,3 +15,4 @@ function DefendantController($rootScope) {
 }
 
 export default ['$rootScope', DefendantController];
+
