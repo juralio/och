@@ -1,4 +1,4 @@
-function ClaimantController() {
+function ClaimantController($rootScope) {
     var vm = this;
 
     $rootScope.username = 'Martin Smith';
