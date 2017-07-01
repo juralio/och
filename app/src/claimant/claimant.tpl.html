@@ -1,6 +1,40 @@
 <div flex layout="row">
     <md-content flex id="content" style="border-right: 1px solid black;">
+        <div class="view-mode" ng-show="!vm.inCreateMode">
+            <md-button class="md-primary md-raised" ng-click="vm.enterCreateClaimMode($event)"   >
+                Create Claim
+            </md-button>
+        </div>
 
+        <div class="create-mode" ng-show="vm.inCreateMode">
+            <div class="claim-creation-wizard">
+                <md-content class="md-padding">
+                    <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+                        <md-tab ng-repeat="tab in vm.tabs"
+                                ng-disabled="tab.disabled"
+                                label="{{tab.title}}">
+                            <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                                <div ng-bind="tab.content"></div>
+                                <div ng-bind="tab.subContent"></div>
+                                <br/>
+                                <md-button class="md-primary md-raised" ng-click="vm.removeTab(tab )" ng-disabled="vm.tabs.length <= 1">Next Step</md-button>
+                                <md-button class="md-primary md-raised" ng-click="vm.removeTab(tab )" ng-show="tab.title == 'Step Two - Confirm Claimee'">No</md-button>
+                            </div>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+            </div>
+
+            <div class="buttons">
+                <md-button class="md-primary md-raised" ng-click="vm.saveClaim($event)"   >
+                    Save Claim
+                </md-button>
+
+                <md-button class="md-primary md-raised" ng-click="vm.discardClaim($event)"   >
+                    Discard Claim
+                </md-button>
+            </div>
+        </div>
     </md-content>
 
     <!-- Container #4 -->
