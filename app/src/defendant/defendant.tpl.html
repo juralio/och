@@ -1,11 +1,35 @@
 <div flex layout="row">
     <md-content flex id="content" style="border-right: 1px solid black;">
-        Content
+        <div class="defendant-wizard">
+            <md-content class="md-padding">
+                <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+                    <md-tab ng-repeat="tab in vm.tabs"
+                            ng-disabled="tab.disabled"
+                            label="{{tab.title}}">
+                        <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                            <div ng-bind="tab.content"></div>
+                            <div style="width:100%">
+                                <div ng-bind="tab.summary"></div>
+                                <video ng-if="tab.videoLink" style="float:right" width="320" height="240" preload="auto"
+                                       controls>
+                                    <source src="{{tab.videoLink}}" type="video/mp4"/>
+                                </video>
+                            </div>
+                            <br/>
+                            <md-button class="md-primary md-raised" ng-click="vm.removeTab(tab )"
+                                       ng-disabled="vm.tabs.length <= 1">Next Step
+                            </md-button>
+                            <md-button class="md-primary md-raised" ng-click="vm.removeTab(tab )"
+                                       ng-show="tab.title == 'Step Two - Confirm Claimee'">No
+                            </md-button>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
     </md-content>
 
     <!-- Container #4 -->
     <md-content flex id="content">
-
-        More content
     </md-content>
 </div>
