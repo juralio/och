@@ -47,6 +47,8 @@
                                         </md-button>
                                     </md-card-actions>
                                 </md-card>
+
+
                             </div>
                         </md-tab>
                         <md-tab class="second-step"
@@ -66,11 +68,9 @@
                                 <input ng-model="problemDescription" required md-maxlength="500" minlength="0">
                             </md-input-container>
 
-                            <div class="button-container">
-                                <md-button class="md-primary md-raised" ng-click="vm.confirmProblem($event)">
-                                    Next Step
-                                </md-button>
-                            </div>
+                            <md-button class="md-primary md-raised" ng-click="vm.confirmProblem($event)">
+                                Next Step
+                            </md-button>
                         </md-tab>
                         <md-tab class="third-step"
                                 label="Step Three"
@@ -93,8 +93,8 @@
                                     </md-checkbox>
                                     <div class="solution-input">
                                         <md-input-container>
-                                            <input ng-model="problemSolution" required md-maxlength="500" minlength="0"
-                                                   ng-if="vm.ownSolution">
+                                            <input ng-model="vm.problemSolution" required md-maxlength="500" minlength="0"
+                                                   ng-disabled="vm.ownSolution">
                                         </md-input-container>
                                     </div>
                                 </div>
@@ -112,9 +112,27 @@
     </md-content>
 
     <md-content flex id="right-content" ng-show="vm.inCreateMode">
-        <div class="claimee-container">
-            <span><b>You are claiming against:    </b></span>
-            <span>{{vm.claimee}}</span>
+        <div class="claimee-container" ng-show="vm.rhp.displayClaimee">
+            <div class="prompt">You are claiming against:    </div>
+            <div>{{vm.claimee}}</div>
+            <div>Bill’s Kitchens Ltd</div>
+            <div>1 High Street</div>
+            <div>Trumpington</div>
+            <div>Noshire NN1 2TT</div>
+            <div>Company number 987654321</div>
+            </br>
+        </div>
+
+        <div class="problem-description-container" ng-show="vm.rhp.displayProblemSummary">
+            <div class="prompt">Summary of the problem:</div>
+            <div>{{vm.problemDescription}}</div>
+            </br>
+        </div>
+
+        <div class="problem-resolution-container" ng-show="vm.rhp.displayProblemSolution">
+            <div class="prompt">How do you think the problem should be resolved?</div>
+            <div ng-show="vm.coveredInVideo">* I’ve covered this in my video</div>
+            <div ng-show="vm.ownSolution">{{vm.problemSolution}}</div>
         </div>
     </md-content>
 </div>
