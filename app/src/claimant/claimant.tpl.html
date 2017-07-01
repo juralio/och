@@ -47,8 +47,6 @@
                                         </md-button>
                                     </md-card-actions>
                                 </md-card>
-
-
                             </div>
                         </md-tab>
                         <md-tab class="second-step"
@@ -68,9 +66,11 @@
                                 <input ng-model="problemDescription" required md-maxlength="500" minlength="0">
                             </md-input-container>
 
-                            <md-button class="md-primary md-raised" ng-click="vm.confirmProblem($event)">
-                                Next Step
-                            </md-button>
+                            <div class="button-container">
+                                <md-button class="md-primary md-raised" ng-click="vm.confirmProblem($event)">
+                                    Next Step
+                                </md-button>
+                            </div>
                         </md-tab>
                         <md-tab class="third-step"
                                 label="Step Three"
@@ -94,11 +94,16 @@
                                     <div class="solution-input">
                                         <md-input-container>
                                             <input ng-model="problemSolution" required md-maxlength="500" minlength="0"
-                                                   ng-disabled="!vm.ownSolution">
+                                                   ng-if="vm.ownSolution">
                                         </md-input-container>
                                     </div>
                                 </div>
                             </md-input-container>
+                            <div class="button-container">
+                                <md-button class="md-primary md-raised" ng-click="vm.confirmClaimee($event)">
+                                    Submit Claim
+                                </md-button>
+                            </div>
                         </md-tab>
                     </md-tabs>
                 </md-content>

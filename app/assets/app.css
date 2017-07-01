@@ -187,3 +187,7 @@ span.name {
 .address-lines {
     margin-left: 18px;
 }
+
+.button-container {
+    text-align: right;
+}
