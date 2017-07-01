@@ -29,6 +29,10 @@ html, body {
     height: 100%;
 }
 
+.block {
+    display: inline-block;
+}
+
 md-toolbar h1 {
     margin: auto;
 }
