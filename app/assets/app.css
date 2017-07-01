@@ -25,6 +25,10 @@ html, body {
     flex: 1;
 }
 
+.full-height, md-content, md-tabs {
+    height: 100%;
+}
+
 md-toolbar h1 {
     margin: auto;
 }
