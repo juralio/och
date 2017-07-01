@@ -20,29 +20,19 @@
                aria-label="Show User List">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
-    <h1>Angular Material - Starter App</h1>
+    <h1>HM Online Courts</h1>
   </md-toolbar>
 
   <!-- Container #2 -->
   <div flex layout="row">
+    <md-content flex id="content" style="border-right: 1px solid black;">
 
-    <!-- Container #3 -->
-    <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
-                md-component-id="left" ng-click="app.toggleList()">
-      <!-- Custom UsersList component -->
-      <users-list
-          users="app.users"
-          selected="app.selected"
-          on-selected="app.selectUser(user)">
-      </users-list>
-    </md-sidenav>
+
+    </md-content>
 
     <!-- Container #4 -->
     <md-content flex id="content">
-      <!-- Custom UserDetails component -->
-      <user-details
-          selected="app.selected" >
-      </user-details>
+
     </md-content>
 
   </div>
