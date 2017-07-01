@@ -161,3 +161,10 @@ span.name {
     height: 60px;
     background-size: 60px;
 }
+
+.view-mode {
+    text-align: center;
+    height: 100%;
+    position: relative;
+    top: 40%;
+}

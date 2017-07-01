@@ -1,6 +1,9 @@
 <div flex layout="row">
     <md-content flex id="left-content" style="border-right: 1px solid black;">
         <div class="view-mode" ng-show="!vm.inCreateMode">
+            <h1>
+                You currently have no active claims
+            </h1>
             <md-button class="md-primary md-raised" ng-click="vm.enterCreateClaimMode($event)">
                 Create Claim
             </md-button>
