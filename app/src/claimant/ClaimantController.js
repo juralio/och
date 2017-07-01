@@ -9,8 +9,12 @@ function ClaimantController($rootScope) {
   vm.discardClaimee = discardClaimee;
   vm.searchClaimee = searchClaimee;
   vm.confirmProblem = confirmProblem;
+  vm.rhp = {
+    displayClaimee: false,
+    displayProblemSummary: false,
+    displayProblemSolution: false
+  };
   vm.displayUploadMessage = () => {
-    console.log($rootScope.fileUploaded);
     return $rootScope.fileUploaded;
   };
   vm.uploadFile = () => {
@@ -18,25 +22,23 @@ function ClaimantController($rootScope) {
     $rootScope.$apply();
   };
 
-  vm.locks = {
-    firstTabLock: false,
-    secondTabLock: true,
-    thirdTabLock: true
-  };
-  vm.activeStatus = {
-    firstTabActive: true,
-    secondTabActive: false,
-    thirdTabActive: false,
-  };
+    vm.locks = {
+        firstTabLock: false,
+        secondTabLock: true,
+        thirdTabLock: true
+    };
+    vm.activeStatus = {
+        firstTabActive: true,
+        secondTabActive: false,
+        thirdTabActive: false,
+    };
 
-  vm.tabs = [
-    { title: 'Step One - Claimee', content: "Who is your claim against?" },
-    {
-      title: 'Step Two - Confirm Claimee',
-      content: "Is this them?",
-      subContent: "Bill’s Kitchens Ltd, 1 High Street, Trumpington, Noshire NN1 2TT, Company number 987654321"
-    },
-  ];
+
+
+    vm.tabs = [
+        { title: 'Step One - Claimee', content: "Who is your claim against?"},
+        { title: 'Step Two - Confirm Claimee', content: "Is this them?", subContent: "Bill’s Kitchens Ltd, 1 High Street, Trumpington, Noshire NN1 2TT, Company number 987654321"
+    },];
 
   function enterCreateClaimMode() {
     vm.inCreateMode = true;
@@ -49,12 +51,13 @@ function ClaimantController($rootScope) {
       thirdTabLock: true
     };
 
-    vm.activeStatus = {
-      firstTabActive: false,
-      secondTabActive: true,
-      thirdTabActive: false,
-    };
-  }
+        vm.activeStatus = {
+            firstTabActive: false,
+            secondTabActive: true,
+            thirdTabActive: false,
+        };
+  vm.rhp.displayClaimee = true;
+        vm.rhp.displayProblemSummary = true;  }
 
   function discardClaimee() {
     vm.displayClaimee = false;
@@ -77,12 +80,12 @@ function ClaimantController($rootScope) {
       thirdTabLock: false
     };
 
-    vm.activeStatus = {
-      firstTabActive: false,
-      secondTabActive: false,
-      thirdTabActive: true,
-    };
-  }
+        vm.activeStatus = {
+            firstTabActive: false,
+            secondTabActive: false,
+            thirdTabActive: true,
+        };
+  vm.rhp.displayProblemSolution = true;  }
 }
 
 export default ["$rootScope", ClaimantController];
