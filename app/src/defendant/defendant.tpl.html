@@ -17,10 +17,10 @@
                             </div>
                             <br/>
                             <md-button class="md-primary md-raised" ng-click="vm.removeTab(tab )"
-                                       ng-disabled="vm.tabs.length <= 1">Next Step
+                                       ng-show="tab.title == 'Step One - Claim'">Next Step
                             </md-button>
                             <md-button class="md-primary md-raised" ng-click="vm.removeTab(tab )"
-                                       ng-show="tab.title == 'Step Two - Confirm Claimee'">No
+                                       ng-show="tab.title == 'Step Two - Suggested Solution'">Submit Response
                             </md-button>
                         </div>
                     </md-tab>
