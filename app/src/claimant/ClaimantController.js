@@ -9,19 +9,23 @@ function ClaimantController($rootScope) {
     vm.discardClaimee = discardClaimee;
     vm.searchClaimee = searchClaimee;
     vm.confirmProblem = confirmProblem;
+    vm.rhp = {
+        displayClaimee: false,
+        displayProblemSummary: false,
+        displayProblemSolution: false
+    }
 
     vm.locks = {
         firstTabLock: false,
         secondTabLock: true,
         thirdTabLock: true
     };
+
     vm.activeStatus = {
         firstTabActive: true,
         secondTabActive: false,
         thirdTabActive: false,
     };
-
-
 
     vm.tabs = [
         { title: 'Step One - Claimee', content: "Who is your claim against?"},
@@ -44,6 +48,9 @@ function ClaimantController($rootScope) {
             secondTabActive: true,
             thirdTabActive: false,
         };
+
+        vm.rhp.displayClaimee = true;
+        vm.rhp.displayProblemSummary = true;
     }
 
     function discardClaimee() {
@@ -72,6 +79,8 @@ function ClaimantController($rootScope) {
             secondTabActive: false,
             thirdTabActive: true,
         };
+
+        vm.rhp.displayProblemSolution = true;
     }
 }
 
