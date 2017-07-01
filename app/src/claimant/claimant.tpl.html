@@ -9,8 +9,8 @@
             </md-button>
         </div>
 
-        <div class="create-mode" ng-show="vm.inCreateMode">
-            <div class="claim-creation-wizard">
+        <div class="create-mode full-height" ng-show="vm.inCreateMode">
+            <div class="claim-creation-wizard full-height">
                 <md-content class="md-padding">
                     <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
                         <md-tab class="first-step"
@@ -18,27 +18,37 @@
                                 ng-disabled="vm.locks.firstTabLock"
                                 md-active="vm.activeStatus.firstTabActive">
                             <md-input-container>
-                                <span><b>Who is your claim against?</b></span>
+                                <span class="prompt">Who is your claim against?</span>
                                 <input ng-model="vm.claimee" required md-maxlength="100" minlength="0">
                             </md-input-container>
                             <md-button class="md-primary md-raised" ng-click="vm.searchClaimee($event)">
                                 Search
                             </md-button>
                             <div class="claimee-detail" ng-show="vm.displayClaimee">
-                                <div>Bill’s Kitchens Ltd</div>
-                                <div>1 High Street</div>
-                                <div>Trumpington</div>
-                                <div>Noshire NN1 2TT</div>
-                                <div>Company number 987654321</div>
-                                </br>
+                                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                                    <md-card-title>
+                                        <md-card-title-text>
+                                            <span class="md-headline">Bill’s Kitchens Ltd</span>
+                                        </md-card-title-text>
+                                    </md-card-title>
+                                    <div class="address-lines">
+                                        <div>1 High Street</div>
+                                        <div>Trumpington</div>
+                                        <div>Noshire NN1 2TT</div>
+                                        <div>Company number 987654321</div>
+                                    </div>
+                                    <md-card-actions layout="row" layout-align="end center">
+                                        <div class="prompt-small">Is it this company?</div>
+                                        <md-button class="md-primary md-raised" ng-click="vm.confirmClaimee($event)">
+                                            Yes
+                                        </md-button>
+                                        <md-button class="md-primary md-raised" ng-click="vm.discardClaimee($event)">
+                                            No
+                                        </md-button>
+                                    </md-card-actions>
+                                </md-card>
 
-                                <div><b>Is it this company?</b></div>
-                                <md-button class="md-primary md-raised" ng-click="vm.confirmClaimee($event)">
-                                    Yes
-                                </md-button>
-                                <md-button class="md-primary md-raised" ng-click="vm.discardClaimee($event)">
-                                    No
-                                </md-button>
+
                             </div>
                         </md-tab>
                         <md-tab class="second-step"
@@ -46,8 +56,9 @@
                                 ng-disabled="vm.locks.secondTabLock"
                                 md-active="vm.activeStatus.secondTabActive">
                             <md-input-container>
-                                <div><b>We’re now going to ask you about the problem and how you’d like it
-                                    resolved. </b></div>
+                                <div class="prompt">We’re now going to ask you about the problem and how you’d like it
+                                    resolved.
+                                </div>
                                 </br>
                                 <div><b>Please summarise the problem </b></div>
                                 </br>
@@ -66,9 +77,7 @@
                                 ng-disabled="vm.locks.thirdTabLock"
                                 md-active="vm.activeStatus.thirdTabActive">
                             <md-input-container>
-                                <div><b>How do you think the problem should be resolved? </b></div>
-                                </br>
-                                </br>
+                                <div class="prompt">How do you think the problem should be resolved?</div>
                                 <div>* You can cover this in your video or write a summary, or both.  If you want to be
                                     paid a certain amount of money, please make that clear.
                                 </div>

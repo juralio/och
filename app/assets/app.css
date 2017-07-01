@@ -25,6 +25,10 @@ html, body {
     flex: 1;
 }
 
+.full-height, md-content, md-tabs {
+    height: 100%;
+}
+
 md-toolbar h1 {
     margin: auto;
 }
@@ -167,4 +171,19 @@ span.name {
     height: 100%;
     position: relative;
     top: 40%;
+}
+
+.prompt {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.prompt-small {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.address-lines {
+    margin-left: 18px;
 }
