@@ -9,6 +9,7 @@ import 'angular-route';
 import AppController from 'src/AppController';
 import Users from 'src/users/Users';
 import ClaimantController from 'src/claimant/ClaimantController';
+import DefendantController from 'src/defendant/DefendantController';
 
 export default angular.module('starter-app', ['ngMaterial', Users.name, 'ngRoute'])
     .config(($mdIconProvider, $mdThemingProvider, $routeProvider) => {
@@ -28,6 +29,11 @@ export default angular.module('starter-app', ['ngMaterial', Users.name, 'ngRoute
                 controller: ClaimantController,
                 controllerAs: "vm"
             })
+          .when("/defendant", {
+            templateUrl: "src/defendant/defendant.tpl.html",
+            controller: DefendantController,
+            controllerAs: "vm"
+          })
             .otherwise({
                 redirectTo: '/#'
             });
@@ -37,4 +43,5 @@ export default angular.module('starter-app', ['ngMaterial', Users.name, 'ngRoute
             .accentPalette('teal');
     })
     .controller('AppController', AppController)
-    .controller('ClaimantController', ClaimantController);
+    .controller('ClaimantController', ClaimantController)
+    .controller('DefendantController', DefendantController);
