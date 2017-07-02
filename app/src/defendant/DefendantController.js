@@ -3,6 +3,7 @@ function DefendantController($rootScope) {
 
   $rootScope.username = 'Bill’s Kitchens Ltd';
 
+  vm.currentPage = 0;
   vm.sendResponse = sendResponse;
   vm.next = next;
   vm.showClaimText = showClaimText;
@@ -36,6 +37,7 @@ function DefendantController($rootScope) {
   ];
 
   function next() {
+    vm.currentPage++;
     vm.locks = {
       firstTabLock: false,
       secondTabLock: false,
@@ -81,4 +83,3 @@ function DefendantController($rootScope) {
 }
 
 export default ['$rootScope', DefendantController];
-
