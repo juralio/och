@@ -214,6 +214,13 @@ span.name {
     top: 40%;
 }
 
+.case-accepted {
+    text-align: center;
+    height: 100%;
+    position: relative;
+    top: 40%;
+}
+
 .prompt {
     font-size: 30px;
     font-weight: bold;

@@ -1,5 +1,12 @@
 <div flex layout="row">
-    <md-content flex id="judge-left-content" style="border-right: 1px solid black;">
+    <div class="case-accepted" ng-show="vm.caseAccpted">
+        <span class="green-tick"></span>
+        <h1>
+            You have been assigned as the Judge responsible for this case.
+        </h1>
+    </div>
+
+    <md-content ng-show="!vm.caseAccpted" flex id="judge-left-content" style="border-right: 1px solid black;">
         <div class="judge-claimant-container">
             <div class="prompt">Claimant:</div>
             <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
@@ -49,7 +56,7 @@
         </div>
     </md-content>
 
-    <md-content flex id="judge-right-content">
+    <md-content ng-show="!vm.caseAccpted" flex id="judge-right-content">
         <div class="judge-defendant-container">
             <div class="prompt">Defendant:</div>
             <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
@@ -85,7 +92,7 @@
         </div>
     </md-content>
 
-    <div class="accept-button">
+    <div ng-show="!vm.caseAccpted" class="accept-button">
         <md-button class="md-primary md-raised" ng-click="vm.acceptCase($event)">
             Accept case
         </md-button>
