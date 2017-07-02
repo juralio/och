@@ -47,8 +47,6 @@
                                         </md-button>
                                     </md-card-actions>
                                 </md-card>
-
-
                             </div>
                         </md-tab>
                         <md-tab class="second-step"
@@ -56,11 +54,12 @@
                                 ng-disabled="vm.locks.secondTabLock"
                                 md-active="vm.activeStatus.secondTabActive">
                             <div class="prompt">We’re now going to ask you about the problem and how you’d like it
-                                    resolved. </div>
-                                </br>
-                                <div><b>Please summarise the problem </b></div>
-                                </br>
-                                <div>* You can write a summary, upload a video (time limit: 2 minutes) or both</div>
+                                resolved.
+                            </div>
+                            </br>
+                            <div><b>Please summarise the problem </b></div>
+                            </br>
+                            <div>* You can write a summary, upload a video (time limit: 2 minutes) or both</div>
 
                             <md-input-container>
                                 <textarea ng-model="vm.problemDescription" required md-maxlength="500"
@@ -98,7 +97,8 @@
                                     </md-checkbox>
                                     <div class="solution-input">
                                         <md-input-container>
-                                            <input ng-model="vm.problemSolution" required md-maxlength="500" minlength="0"
+                                            <input ng-model="vm.problemSolution" required md-maxlength="500"
+                                                   minlength="0"
                                                    ng-disabled="vm.ownSolution">
                                         </md-input-container>
                                     </div>
@@ -117,31 +117,41 @@
     </md-content>
 
     <md-content flex id="right-content" ng-show="vm.inCreateMode">
-        <div class="claimee-container" ng-show="vm.rhp.displayClaimee">
-            <div class="prompt">You are claiming against:    </div>
-            <div>Bill’s Kitchens Ltd</div>
-            <div>1 High Street</div>
-            <div>Trumpington</div>
-            <div>Noshire NN1 2TT</div>
-            <div>Company number 987654321</div>
-            </br>
-        </div>
+        <div class="right-content-container">
+            <div class="claimee-container" ng-show="vm.rhp.displayClaimee">
+                <div class="prompt">You are claiming against:</div>
+                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Bill’s Kitchens Ltd</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <div class="address-lines">
+                        <div>1 High Street</div>
+                        <div>Trumpington</div>
+                        <div>Noshire NN1 2TT</div>
+                        <div>Company number 987654321</div>
+                    </div>
+                    </br>
+                </md-card>
+            </div>
 
-        <div class="problem-description-container" ng-show="vm.rhp.displayProblemSummary">
-            <div class="prompt">Summary of the problem:</div>
-            <div>{{vm.problemDescription}}</div>
-            </br>
-        </div>
+            <div class="problem-description-container" ng-show="vm.rhp.displayProblemSummary">
+                <div class="prompt">Summary of the problem:</div>
+                <div>{{vm.problemDescription}}</div>
+                </br>
+            </div>
 
-        <div class="problem-resolution-container" ng-show="vm.rhp.displayProblemSolution">
-            <div class="prompt">How do you think the problem should be resolved?</div>
-            <div ng-show="vm.coveredInVideo">* I’ve covered this in my video</div>
-            <div ng-show="vm.ownSolution">{{vm.problemSolution}}</div>
-        </div>
+            <div class="problem-resolution-container" ng-show="vm.rhp.displayProblemSolution">
+                <div class="prompt">How do you think the problem should be resolved?</div>
+                <div ng-show="vm.coveredInVideo">* I’ve covered this in my video</div>
+                <div ng-show="vm.ownSolution">{{vm.problemSolution}}</div>
+            </div>
 
-        <video ng-if="vm.displayUploadMessage()" style="float:right" width="320" height="240" preload="auto"
-               controls>
-            <source src="./assets/taps.mp4" type="video/mp4"/>
-        </video>
+            <video ng-if="vm.displayUploadMessage()" style="float:right" width="320" height="240" preload="auto"
+                   controls>
+                <source src="./assets/taps.mp4" type="video/mp4"/>
+            </video>
+        </div>
     </md-content>
 </div>
