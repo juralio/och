@@ -8,8 +8,8 @@ function DefendantController($rootScope) {
     vm.acceptCase = acceptCase;
 
     vm.lhp = {
-        problemDescription: "Gold taps not fitted as agreed.",
-        problemSolution: "They should fit gold taps."
+        problemDescription: "Gold taps were not fitted as agreed.",
+        problemSolution: "Replace taps."
     };
 
     function acceptCase() {
