@@ -1,101 +1,127 @@
 <div flex layout="row">
 
-    <md-content flex id="content" style="border-right: 1px solid black;">
-        <div class="defendant-wizard full-height">
-            <md-content class="md-padding">
-                <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
-                    <md-tab md-active="vm.activeStatus.firstTabActive"
-                            ng-disabled="vm.locks.firstTabLock"
-                            label="1. Claim">
-                        <br/>
-                        <div><b>Claim brought against you by Martin Smith.</b></div>
-                        <br/>
-                        <div class="block">
-                            <div>This is some summary information</div>
-                            <br/>
-                            <video style="float:right" width="320" height="240" preload="auto"
-                                   controls>
+  <md-content flex id="content" style="border-right: 1px solid black;">
+    <div class="defendant-wizard full-height">
+      <md-content class="md-padding">
+        <md-tabs md-selected="vm.currentPage" md-border-bottom md-autoselect>
+          <md-tab md-active="vm.activeStatus.firstTabActive" ng-disabled="vm.locks.firstTabLock" label="1. Problem">
+            <br/>
+            <div><b>Problem as summarised by Martin Smith.</b></div>
+            <br/>
+            <div class="block">
+              <div>Gold taps were not fitted as agreed.</div>
+              <br/>
+              <video style="float:right" width="320" height="240" preload="auto" controls>
                                 <source src="./assets/taps.mp4" type="video/mp4"/>
                             </video>
-                        </div>
-                        <br/>
-                        <div>Do you agree?</div>
-                        <br/>
-                        <div style="padding-left:20px;">
-                            <md-radio-group ng-model="vm.agreeToClaim">
-                                <md-radio-button aria-label="Checkbox 1" ng-value="1">
-                                    Yes
-                                </md-radio-button>
-                                <md-radio-button aria-label="Checkbox 1" ng-value="2">
-                                    No
-                                </md-radio-button>
-                            </md-radio-group>
-                        </div>
-                        <div ng-show="vm.agreeToClaim=='2'">
-                            <div>
-                                <h2 ng-click="vm.showClaimText()">Text</h2>
-                                <div ng-show="vm.disagreeClaim.textVisible">
-                                    <md-input-container>
-                                        <input ng-model="vm.claimDisputeText" required md-maxlength="500"
-                                               minlength="0"/>
-                                    </md-input-container>
-                                </div>
-                            </div>
-                            <div>
-                                <h2 ng-click="vm.showClaimVideo()">Video</h2>
-                                <div ng-show="vm.disagreeClaim.videoVisible">
-                                    This is video
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <md-button class="md-primary md-raised block" ng-click="vm.next()">
-                            Next Step
-                        </md-button>
-                    </md-tab>
-                    <md-tab md-active="vm.activeStatus.secondTabActive"
-                            ng-disabled="vm.locks.secondTabLock"
-                            label="2. Suggested Solution">
-                        <br/>
-                        <div>Solution provided in claim video</div>
-                        <br/>
-                        <div style="padding-left:20px;">
-                            <md-radio-group ng-model="vm.agreeToSolution">
-                                <md-radio-button aria-label="Checkbox 1" ng-value="1">
-                                    Yes
-                                </md-radio-button>
-                                <md-radio-button aria-label="Checkbox 1" ng-value="2">
-                                    No
-                                </md-radio-button>
-                            </md-radio-group>
-                        </div>
-                        <div ng-show="vm.agreeToSolution=='2'">
-                            <div>
-                                <h2 ng-click="vm.showSolutionText()">Text</h2>
-                                <div ng-show="vm.disagreeSolution.textVisible">
-                                    <md-input-container>
-                                        <input ng-model="vm.claimDisputeVideo" required md-maxlength="500"
-                                               minlength="0"/>
-                                    </md-input-container>
-                                </div>
-                            </div>
-                            <div>
-                                <h2 ng-click="vm.showSolutionVideo()">Video</h2>
-                                <div ng-show="vm.disagreeSolution.videoVisible">
-                                    This is video
-                                </div>
-                            </div>
-                        </div>
-                        <md-button class="md-primary md-raised block" ng-click="vm.sendResponse()">
-                            Submit Response
-                        </md-button>
-                    </md-tab>
-                </md-tabs>
-            </md-content>
-        </div>
-    </md-content>
+            </div>
+            <br/>
+            <div>Do you agree?</div>
+            <br/>
+            <div style="padding-left:20px;">
+              <md-radio-group ng-model="vm.agreeToClaim">
+                <md-radio-button aria-label="Checkbox 1" ng-value="1">
+                  Yes
+                </md-radio-button>
+                <md-radio-button aria-label="Checkbox 1" ng-value="2">
+                  No
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div ng-show="vm.agreeToClaim=='2'">
+              <div>
+                <h3 ng-click="vm.showClaimText()">Please add a summary of why you disagree</h3>
+                <div ng-show="vm.disagreeClaim.textVisible">
+                  <md-input-container>
+                    <textarea ng-model="vm.claimDisputeText" required md-maxlength="500" minlength="0"></textarea>
+                  </md-input-container>
+                </div>
+              </div>
+              <div>
+                <h3 ng-click="vm.showClaimVideo()">Click here to upload a video (optional)</h3>
+                <div ng-show="vm.disagreeClaim.videoVisible">
+                </div>
+              </div>
+            </div>
+            <br/>
+            <md-button class="md-primary md-raised block" ng-click="vm.next()">
+              Next Step
+            </md-button>
+          </md-tab>
+          <md-tab md-active="vm.activeStatus.secondTabActive" ng-disabled="vm.locks.secondTabLock" label="2. Suggested Solution">
+            <br/>
+            <div><b>Solution suggested by Martin Smith.</b></div>
+            <br/>
+            <div>Replace taps</div>
+            <br/>
+            <div><b>Do you agree to provide the suggested solution?</b></div>
+            <br/>
+            <div style="padding-left:20px;">
+              <md-radio-group ng-model="vm.agreeToSolution">
+                <md-radio-button aria-label="Checkbox 1" ng-value="1">
+                  Yes
+                </md-radio-button>
+                <md-radio-button aria-label="Checkbox 1" ng-value="2">
+                  No
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div ng-show="vm.agreeToSolution=='2'">
+              <div>
+                <h3 ng-click="vm.showSolutionText()">If you have an alternative solution, please summarise it</h3>
+                <div ng-show="vm.disagreeSolution.textVisible">
+                  <md-input-container>
+                    <textarea ng-model="vm.solutionDisputeText" required md-maxlength="500" minlength="0"></textarea>
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+            <md-button class="md-primary md-raised block" ng-click="vm.sendResponse()">
+              Notify Response
+            </md-button>
+          </md-tab>
+        </md-tabs>
+      </md-content>
+    </div>
+  </md-content>
 
-    <!-- Container #4 -->
-    <md-content flex id="content">
-    </md-content>
+  <!-- Container #4 -->
+  <md-content flex id="content">
+    <div class="right-content-container">
+      <div class="claimee-container" ng-show="true">
+        <div class="prompt">The claimant is:</div>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">Martin Smith</span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
+
+
+      <div class="problem-description-container" ng-show="vm.currentPage > 0">
+        <div class="prompt">Your claim disagreement summary:</div>
+
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+          </br>
+          <div class="address-lines">
+            <div>{{vm.claimDisputeText}}</div>
+          </div>
+        </md-card>
+        </br>
+      </div>
+      <div class="problem-description-container" ng-show="vm.currentPage > 1">
+        <div class="prompt">Your solution disagreement summary:</div>
+
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+          </br>
+          <div class="address-lines">
+            <div>{{vm.solutionDisputeText}}</div>
+          </div>
+        </md-card>
+        </br>
+      </div>
+    </div>
+  </md-content>
 </div>
