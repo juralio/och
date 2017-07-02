@@ -1,7 +1,15 @@
 <div flex layout="row">
 
   <md-content flex id="content" style="border-right: 1px solid black;">
-    <div class="defendant-wizard full-height">
+
+    <div class="wait-mode" ng-show="vm.submitted">
+      <span class="green-tick"></span>
+      <h1>
+                You've successfully responded to the claim.
+            </h1>
+    </div>
+
+    <div class="defendant-wizard full-height" ng-show="!vm.submitted">
       <md-content class="md-padding">
         <md-tabs md-selected="vm.currentPage" md-border-bottom md-autoselect>
           <md-tab md-active="vm.activeStatus.firstTabActive" ng-disabled="vm.locks.firstTabLock" label="1. Problem">
@@ -76,9 +84,14 @@
                 </div>
               </div>
             </div>
-            <md-button class="md-primary md-raised block" ng-click="vm.sendResponse()">
-              Notify Response
+            <md-button class="md-primary md-raised block" ng-click="vm.next()">
+              Next Step
             </md-button>
+          </md-tab>
+          <md-tab label="3. Review">
+          <md-button class="md-primary md-raised block" ng-click="vm.sendResponse()">
+            Notify Response
+          </md-button>
           </md-tab>
         </md-tabs>
       </md-content>
@@ -86,7 +99,7 @@
   </md-content>
 
   <!-- Container #4 -->
-  <md-content flex id="content">
+  <md-content flex id="content" ng-show="!vm.submitted">
     <div class="right-content-container">
       <div class="claimee-container" ng-show="true">
         <div class="prompt">The claimant is:</div>
@@ -98,7 +111,6 @@
           </md-card-title>
         </md-card>
       </div>
-
 
       <div class="problem-description-container" ng-show="vm.currentPage > 0">
         <div class="prompt">Your claim disagreement summary:</div>
@@ -124,4 +136,5 @@
       </div>
     </div>
   </md-content>
+</div>
 </div>
