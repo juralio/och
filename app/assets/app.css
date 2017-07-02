@@ -176,11 +176,23 @@ span.name {
 }
 
 .user-icon {
-    background-image: url(../assets/martin.png);
+    width: 50px;
+    height: 50px;
     display: inline-block;
-    width: 60px;
-    height: 60px;
-    background-size: 60px;
+    background-size: 50px;
+    margin-right: 10px;
+}
+
+.martin-icon {
+    background-image: url(../assets/iain-johnston.png);
+}
+
+.bill-icon {
+    background-image: url(../assets/richie-mackay.png);
+}
+
+.khan-icon {
+    background-image: url(../assets/judgefaith.png);
 }
 
 .view-mode {

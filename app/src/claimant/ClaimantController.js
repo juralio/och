@@ -2,6 +2,7 @@ function ClaimantController($rootScope) {
     const vm = this;
 
     $rootScope.username = 'Martin Smith';
+    $rootScope.userClass = 'martin-icon';
 
     vm.inCreateMode = false;
     vm.enterCreateClaimMode = enterCreateClaimMode;

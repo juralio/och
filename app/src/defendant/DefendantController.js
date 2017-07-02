@@ -2,6 +2,7 @@ function DefendantController($rootScope) {
   var vm = this;
 
   $rootScope.username = 'Bill’s Kitchens Ltd';
+  $rootScope.userClass = 'bill-icon';
 
   vm.currentPage = 0;
   vm.sendResponse = sendResponse;
@@ -32,8 +33,12 @@ function DefendantController($rootScope) {
   }
 
   vm.tabs = [
-    { content: "Claim brought against you by Martin Smith.", summary: "This is some summary information", videoLink: "./assets/taps.mp4"},
-    { content: "Solution provided in claim video"},
+    {
+      content: "Claim brought against you by Martin Smith.",
+      summary: "This is some summary information",
+      videoLink: "./assets/taps.mp4"
+    },
+    { content: "Solution provided in claim video" },
   ];
 
   function next() {

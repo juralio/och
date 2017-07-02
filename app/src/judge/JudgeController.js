@@ -1,6 +1,6 @@
 function DefendantController($rootScope) {
-
-    $rootScope.username = 'Judge Khan';
+  $rootScope.username = 'Judge Khan';
+  $rootScope.userClass = 'khan-icon';
 
 
 }
