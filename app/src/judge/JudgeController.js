@@ -5,8 +5,8 @@ function DefendantController($rootScope) {
   $rootScope.userClass = 'khan-icon';
 
     vm.lhp = {
-        problemDescription: "Bill Kitchen Ltd promised me gold tabs, but it is silver!",
-        problemSolution: "I need claiming £5000 from Bill Kitchen to replace the tabs."
+        problemDescription: "Gold taps not fitted as agreed.",
+        problemSolution: "They should fit gold taps."
     };
 }
 

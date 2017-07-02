@@ -242,6 +242,32 @@ span.name {
     padding-left: 30px;
 }
 
+.judge-claimant-container {
+    padding-top: 20px;
+    height: 25%;
+}
+
+.judge-defendant-container {
+    padding-top: 20px;
+    height: 25%;
+}
+
+.claimant-problem-description-container {
+    height: 58%;
+}
+
+.defendant-problem-container {
+    height: 58%;
+}
+
+.claimant-problem-solution-container {
+    height: 35%;
+}
+
+.defendant-problem-solution-container {
+    height: 35%;
+}
+
 .second-step {
     padding-top: 20px;
 }
