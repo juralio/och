@@ -218,6 +218,7 @@ span.name {
     text-align: center;
     height: 100%;
     position: relative;
+    margin: auto;
     top: 40%;
 }
 
