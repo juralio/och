@@ -147,7 +147,18 @@
 
             <div class="problem-description-container" ng-show="vm.rhp.displayProblemSummary">
                 <div class="prompt">Summary of the problem:</div>
-                <div>{{vm.problemDescription}}</div>
+
+                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                    </br>
+                    <div class="address-lines">
+                        <div>{{vm.problemDescription}}</div>
+                    </div>
+                    <video ng-if="vm.displayUploadMessage()" style="float:right" width="320" height="240" preload="auto"
+                           controls>
+                        <source src="./assets/taps.mp4" type="video/mp4"/>
+                    </video>
+                    </br>
+                </md-card>
                 </br>
             </div>
 
@@ -156,11 +167,6 @@
                 <div ng-show="vm.coveredInVideo">* I’ve covered this in my video</div>
                 <div ng-show="vm.ownSolution">{{vm.problemSolution}}</div>
             </div>
-
-            <video ng-if="vm.displayUploadMessage()" style="float:right" width="320" height="240" preload="auto"
-                   controls>
-                <source src="./assets/taps.mp4" type="video/mp4"/>
-            </video>
         </div>
     </md-content>
 </div>
