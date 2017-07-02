@@ -166,6 +166,11 @@ span.name {
     background-size: 70px;
 }
 
+.email-lines {
+    color: blue;
+    text-decoration: underline;
+}
+
 .user-container {
     display: flex;
     align-items: center;
