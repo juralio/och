@@ -248,6 +248,29 @@ span.name {
     flex: 1;
 }
 
+.claim-creation-wizard .claimee-container {
+    display: flex;
+    align-items: center;
+}
+
+.claim-creation-wizard .claimee-container {
+    display: flex;
+    align-items: center;
+}
+
+.claim-creation-wizard .claimee-container md-input-container {
+    flex: 1;
+}
+
+.options-container {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.top-padding {
+    padding-top: 10px;
+}
+
 video {
     margin: auto;
 }

@@ -3,6 +3,7 @@ function DefendantController($rootScope) {
 
   $rootScope.username = 'Bill’s Kitchens Ltd';
 
+  vm.currentPage = 0;
   vm.sendResponse = sendResponse;
   vm.next = next;
   vm.showClaimText = showClaimText;
@@ -33,9 +34,11 @@ function DefendantController($rootScope) {
   vm.tabs = [
     { content: "Claim brought against you by Martin Smith.", summary: "This is some summary information", videoLink: "./assets/taps.mp4"},
     { content: "Solution provided in claim video"},
+    { content: "Review & submit"},
   ];
 
   function next() {
+    vm.currentPage++;
     vm.locks = {
       firstTabLock: false,
       secondTabLock: false,
@@ -48,7 +51,7 @@ function DefendantController($rootScope) {
   }
 
   function sendResponse() {
-    alert("you clicked send");
+    vm.submitted = true;
   }
 
   function showClaimText() {
@@ -81,4 +84,3 @@ function DefendantController($rootScope) {
 }
 
 export default ['$rootScope', DefendantController];
-

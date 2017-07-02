@@ -24,13 +24,15 @@
                                 label="Step One"
                                 ng-disabled="vm.locks.firstTabLock"
                                 md-active="vm.activeStatus.firstTabActive">
-                            <md-input-container>
-                                <span class="prompt">Who is your claim against?</span>
-                                <input ng-model="vm.claimee" required md-maxlength="100" minlength="0">
-                            </md-input-container>
-                            <md-button class="md-primary md-raised" ng-click="vm.searchClaimee($event)">
-                                Search
-                            </md-button>
+                            <div class="claimee-container">
+                                <md-input-container>
+                                    <span class="prompt">Who is your claim against?</span>
+                                    <input ng-model="vm.claimee" required md-maxlength="100" minlength="0">
+                                </md-input-container>
+                                <md-button class="md-primary md-raised" ng-click="vm.searchClaimee($event)">
+                                    Search
+                                </md-button>
+                            </div>
                             <div class="claimee-detail" ng-show="vm.displayClaimee">
                                 <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
                                     <md-card-title>
@@ -91,25 +93,28 @@
                                 md-active="vm.activeStatus.thirdTabActive">
                             <md-input-container>
                                 <div class="prompt">How do you think the problem should be resolved?</div>
-                                <div>* You can cover this in your video or write a summary, or both.  If you want to be
+                                <div class="top-padding">You can cover this in your video or write a summary, or both.
+                                </div>
+                                <div>If you want to be
                                     paid a certain amount of money, please make that clear.
                                 </div>
-                                <div>* Options</div>
-                                <div>
-                                    <md-checkbox ng-model="vm.coveredInVideo" aria-label="Checkbox 1">
-                                        I’ve covered this in my video
-                                    </md-checkbox>
-                                </div>
-                                <div>
-                                    <md-checkbox ng-model="vm.ownSolution" aria-label="Checkbox 1">
-                                        Add written summary
-                                    </md-checkbox>
-                                    <div class="solution-input">
-                                        <md-input-container>
-                                            <input ng-model="vm.problemSolution" required md-maxlength="500"
-                                                   minlength="0"
-                                                   ng-disabled="!vm.ownSolution">
-                                        </md-input-container>
+                                <div class="options-container">
+                                    <div>
+                                        <md-checkbox ng-model="vm.coveredInVideo" aria-label="Checkbox 1">
+                                            I’ve covered this in my video
+                                        </md-checkbox>
+                                    </div>
+                                    <div>
+                                        <md-checkbox ng-model="vm.ownSolution" aria-label="Checkbox 1">
+                                            Add written summary
+                                        </md-checkbox>
+                                        <div class="solution-input full-width">
+                                            <md-input-container class="full-width">
+                                                <input ng-model="vm.problemSolution" required md-maxlength="500"
+                                                       minlength="0"
+                                                       ng-if="vm.ownSolution">
+                                            </md-input-container>
+                                        </div>
                                     </div>
                                 </div>
                             </md-input-container>
@@ -129,7 +134,7 @@
         <div class="right-content-container">
             <div class="claimee-container" ng-show="vm.rhp.displayClaimee">
                 <div class="prompt">You are claiming against:</div>
-                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card md-theme-watch>
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline">Bill’s Kitchens Ltd</span>
@@ -148,7 +153,7 @@
             <div class="problem-description-container" ng-show="vm.rhp.displayProblemSummary">
                 <div class="prompt">Summary of the problem:</div>
 
-                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card ng-if="vm.problemDescription.length > 0 || vm.displayUploadMessage()" md-theme-watch>
                     </br>
                     <div class="address-lines">
                         <div>{{vm.problemDescription}}</div>
@@ -164,8 +169,14 @@
 
             <div class="problem-resolution-container" ng-show="vm.rhp.displayProblemSolution">
                 <div class="prompt">How do you think the problem should be resolved?</div>
-                <div ng-show="vm.coveredInVideo">* I’ve covered this in my video</div>
-                <div ng-show="vm.ownSolution">{{vm.problemSolution}}</div>
+                <md-card ng-if="vm.coveredInVideo > 0 || vm.ownSolution" md-theme-watch>
+                    </br>
+                    <div class="address-lines">
+                        <div ng-show="vm.coveredInVideo">I’ve covered this in my video</div>
+                        <div ng-show="vm.ownSolution" class="top-padding">{{vm.problemSolution}}</div>
+                    </div>
+                    </br>
+                </md-card>
             </div>
         </div>
     </md-content>
