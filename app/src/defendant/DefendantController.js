@@ -21,7 +21,7 @@ function DefendantController($rootScope) {
     { content: "Solution provided in claim video"},
   ];
 
-  function next(tab) {
+  function next() {
     vm.locks = {
       firstTabLock: false,
       secondTabLock: false,
