@@ -305,6 +305,10 @@ span.name {
     margin-top: 10px;
 }
 
+.judge-bottom-buttons {
+    display: block;
+}
+
 .top-padding {
     padding-top: 10px;
 }

@@ -1,5 +1,4 @@
 <div flex layout="row">
-
     <md-content flex id="content" style="border-right: 1px solid black;">
 
         <div class="wait-mode" ng-show="vm.submitted">
@@ -44,8 +43,9 @@
                             <div>
                                 <h3 ng-click="vm.showClaimText()">Please add a summary of why you disagree</h3>
                                 <div ng-show="vm.disagreeClaim.textVisible">
-                                    <md-input-container>
-                                        <textarea ng-model="vm.claimDisputeText" required md-maxlength="500"
+                                    <md-input-container class="full-width">
+                                        <textarea class="full-width"
+                                                  ng-model="vm.claimDisputeText" required md-maxlength="500"
                                                   minlength="0"></textarea>
                                     </md-input-container>
                                 </div>
@@ -136,5 +136,4 @@
             </div>
         </div>
     </md-content>
-</div>
 </div>
