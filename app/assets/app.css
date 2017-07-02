@@ -4,7 +4,7 @@
 
 html, body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -27,6 +27,10 @@ html, body {
 
 .full-height, md-content, md-tabs {
     height: 100%;
+}
+
+.full-width {
+    width: 100%;
 }
 
 .block {
@@ -196,7 +200,33 @@ span.name {
     text-align: right;
 }
 
+#left-content {
+    overflow: hidden;
+}
+
 .right-content-container {
     padding-top: 25px;
     padding-left: 30px;
+}
+
+.second-step {
+    padding-top: 20px;
+}
+
+.upload-container {
+    display: flex;
+    align-items: center;
+}
+
+.upload-container {
+    display: flex;
+    align-items: center;
+}
+
+.upload-container > div {
+    flex: 1;
+}
+
+input, textarea {
+    font-size: 16px;
 }
