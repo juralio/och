@@ -1,7 +1,72 @@
 <div flex layout="row">
     <md-content flex id="left-content" style="border-right: 1px solid black;">
+        <div class="claimant-container">
+            <div class="prompt">The claimant is:</div>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>Martin Smith</div>
+                    <div>
+                        <span>✉</span>
+                        <span class="email-lines">martin.smith@goldtabs.co</span>
+                    </div>
+                </div>
+                </br>
+            </md-card>
+        </div>
+
+        <div class="problem-description-container">
+            <div class="prompt">Summary of the problem:</div>
+
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>{{vm.lhp.problemDescription}}</div>
+                </div>
+                <video style="float:right" width="320" height="240" preload="auto"
+                       controls>
+                    <source src="./assets/taps.mp4" type="video/mp4"/>
+                </video>
+                </br>
+            </md-card>
+            </br>
+        </div>
+
+        <div class="problem-solution-container">
+            <div class="prompt">Solution of the problem:</div>
+
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>{{vm.lhp.problemSolution}}</div>
+                </div>
+                </br>
+                <div class="address-lines">* I've covered this in my video.</div>
+            </md-card>
+
+                </br>
+            </md-card>
+            </br>
+        </div>
     </md-content>
 
     <md-content flex id="right-content">
+        <div class="defendant-container">
+            <div class="prompt">The defendant is:</div>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Bill’s Kitchens Ltd</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <div class="address-lines">
+                    <div>1 High Street</div>
+                    <div>Trumpington</div>
+                    <div>Noshire NN1 2TT</div>
+                    <div>Company number 987654321</div>
+                </div>
+                </br>
+            </md-card>
+        </div>
     </md-content>
 </div>

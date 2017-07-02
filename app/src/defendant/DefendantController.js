@@ -2,6 +2,7 @@ function DefendantController($rootScope) {
   var vm = this;
 
   $rootScope.username = 'Bill’s Kitchens Ltd';
+  $rootScope.userClass = 'bill-icon';
 
   vm.currentPage = 0;
   vm.sendResponse = sendResponse;
