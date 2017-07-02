@@ -153,6 +153,15 @@ span.name {
     background-repeat: no-repeat;
 }
 
+.green-tick {
+    background-image: url(../assets/Green-Tick-PNG.png);
+    display: inline-block;
+    width: 55px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 70px;
+}
+
 .user-container {
     display: flex;
     align-items: center;
