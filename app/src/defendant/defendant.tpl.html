@@ -6,12 +6,12 @@
                 <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
                     <md-tab md-active="vm.activeStatus.firstTabActive"
                             ng-disabled="vm.locks.firstTabLock"
-                            label="1. Claim">
+                            label="1. Problem">
                         <br/>
-                        <div><b>Claim brought against you by Martin Smith.</b></div>
+                        <div><b>Problem as summarised by Martin Smith.</b></div>
                         <br/>
                         <div class="block">
-                            <div>This is some summary information</div>
+                            <div>Gold taps were not fitted as agreed.</div>
                             <br/>
                             <video style="float:right" width="320" height="240" preload="auto"
                                    controls>
@@ -33,7 +33,7 @@
                         </div>
                         <div ng-show="vm.agreeToClaim=='2'">
                             <div>
-                                <h2 ng-click="vm.showClaimText()">Text</h2>
+                                <h3 ng-click="vm.showClaimText()">Please add a summary of why you disagree</h3>
                                 <div ng-show="vm.disagreeClaim.textVisible">
                                     <md-input-container>
                                         <input ng-model="vm.claimDisputeText" required md-maxlength="500"
@@ -42,9 +42,8 @@
                                 </div>
                             </div>
                             <div>
-                                <h2 ng-click="vm.showClaimVideo()">Video</h2>
+                                <h3 ng-click="vm.showClaimVideo()">Click here to upload a video (optional)</h3>
                                 <div ng-show="vm.disagreeClaim.videoVisible">
-                                    This is video
                                 </div>
                             </div>
                         </div>
@@ -57,7 +56,11 @@
                             ng-disabled="vm.locks.secondTabLock"
                             label="2. Suggested Solution">
                         <br/>
-                        <div>Solution provided in claim video</div>
+                        <div><b>Solution suggested by Martin Smith.</b></div>
+                        <br/>
+                        <div>Replace taps</div>
+                        <br/>
+                        <div><b>Do you agree to provide the suggested solution?</b></div>
                         <br/>
                         <div style="padding-left:20px;">
                             <md-radio-group ng-model="vm.agreeToSolution">
@@ -71,7 +74,7 @@
                         </div>
                         <div ng-show="vm.agreeToSolution=='2'">
                             <div>
-                                <h2 ng-click="vm.showSolutionText()">Text</h2>
+                                <h3 ng-click="vm.showSolutionText()">If you have an alternative solution, please summarise it</h3>
                                 <div ng-show="vm.disagreeSolution.textVisible">
                                     <md-input-container>
                                         <input ng-model="vm.claimDisputeVideo" required md-maxlength="500"
@@ -79,15 +82,9 @@
                                     </md-input-container>
                                 </div>
                             </div>
-                            <div>
-                                <h2 ng-click="vm.showSolutionVideo()">Video</h2>
-                                <div ng-show="vm.disagreeSolution.videoVisible">
-                                    This is video
-                                </div>
-                            </div>
                         </div>
                         <md-button class="md-primary md-raised block" ng-click="vm.sendResponse()">
-                            Submit Response
+                            Notify Response
                         </md-button>
                     </md-tab>
                 </md-tabs>
