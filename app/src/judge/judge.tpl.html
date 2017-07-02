@@ -1,99 +1,100 @@
 <div flex layout="row">
-    <div flex layout="column">
-        <div flex layout="row">
-            <md-content flex id="judge-left-content" style="border-right: 1px solid black;">
-                <div class="judge-claimant-container">
-                    <div class="prompt">Claimant:</div>
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">Martin Smith</span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        </br>
-                    </md-card>
-                </div>
+    <div class="case-accepted" ng-show="vm.caseAccpted">
+        <span class="green-tick"></span>
+        <h1>
+            You have been assigned as the Judge responsible for this case.
+        </h1>
+    </div>
 
-                <div class="claimant-problem-description-container">
-                    <div class="prompt">Problem:</div>
-
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                        </br>
-                        <div class="address-lines">
-                            <div>{{vm.lhp.problemDescription}}</div>
-                        </div>
-                        </br>
-                        <div class="address-lines">
-                            <span><b>Automated video transcript: </b></span>
-                            <span>"I agreed with Dave the site manager that these taps was going to be gold. They're not gold. I need gold taps."</span>
-                        </div>
-
-                        <video style="float:right" width="320" height="240" preload="auto"
-                               controls>
-                            <source src="./assets/taps.mp4" type="video/mp4"/>
-                        </video>
-                        </br>
-                    </md-card>
-                    </br>
-                </div>
-
-                <div class="claimant-problem-solution-container">
-                    <div class="prompt">Solution:</div>
-
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                        </br>
-                        <div class="address-lines">
-                            <div>{{vm.lhp.problemSolution}}</div>
-                        </div>
-                        </br>
-                    </md-card>
-                    </br>
-                </div>
-            </md-content>
-
-            <md-content flex id="judge-right-content">
-                <div class="judge-defendant-container">
-                    <div class="prompt">Defendant:</div>
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">Bill’s Kitchens Ltd</span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        </br>
-                    </md-card>
-                </div>
-
-                <div class="defendant-problem-container">
-                    <div class="prompt">Problem:</div>
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                        </br>
-                        <div class="address-lines">
-                            <div>It was not agreed to fit gold taps.</div>
-                        </div>
-                        </br>
-                    </md-card>
-                </div>
-
-                <div class="defendant-problem-solution-container">
-                    <div class="prompt">Solution:</div>
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-                        </br>
-                        <div class="address-lines">
-                            <div>N/A</div>
-                        </div>
-                        </br>
-                    </md-card>
-                </div>
-            </md-content>
+    <md-content ng-show="!vm.caseAccpted" flex id="judge-left-content" style="border-right: 1px solid black;">
+        <div class="judge-claimant-container">
+            <div class="prompt">Claimant:</div>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Martin Smith</span>
+                    </md-card-title-text>
+                </md-card-title>
+                </br>
+            </md-card>
         </div>
-        <div class="button-container judge-bottom-buttons">
-            <hr/>
-            <div class="accept-button">
-                <md-button class="md-primary md-raised" ng-click="vm.acceptCase($event)">
-                    Accept case
-                </md-button>
-            </div>
+
+        <div class="claimant-problem-description-container">
+            <div class="prompt">Problem:</div>
+
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>{{vm.lhp.problemDescription}}</div>
+                </div>
+                </br>
+                <div class="address-lines">
+                    <span><b>Automated video transcript: </b></span>
+                    <span>"I agreed with Dave the site manager that these taps was going to be gold. They're not gold. I need gold taps."</span>
+                </div>
+
+                <video style="float:right" width="320" height="240" preload="auto"
+                       controls>
+                    <source src="./assets/taps.mp4" type="video/mp4"/>
+                </video>
+                </br>
+            </md-card>
+            </br>
         </div>
+
+        <div class="claimant-problem-solution-container">
+            <div class="prompt">Solution:</div>
+
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>{{vm.lhp.problemSolution}}</div>
+                </div>
+                </br>
+            </md-card>
+            </br>
+        </div>
+    </md-content>
+
+    <md-content ng-show="!vm.caseAccpted" flex id="judge-right-content">
+        <div class="judge-defendant-container">
+            <div class="prompt">Defendant:</div>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Bill’s Kitchens Ltd</span>
+                    </md-card-title-text>
+                </md-card-title>
+                </br>
+            </md-card>
+        </div>
+
+        <div class="defendant-problem-container">
+            <div class="prompt">Problem:</div>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>It was not agreed to fit gold taps.</div>
+                </div>
+                </br>
+            </md-card>
+        </div>
+
+        <div class="defendant-problem-solution-container">
+            <div class="prompt">Solution:</div>
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                </br>
+                <div class="address-lines">
+                    <div>N/A</div>
+                </div>
+                </br>
+            </md-card>
+        </div>
+    </md-content>
+
+    <div ng-show="!vm.caseAccpted" class="accept-button">
+        <md-button class="md-primary md-raised" ng-click="vm.acceptCase($event)">
+            Accept case
+        </md-button>
     </div>
 </div>

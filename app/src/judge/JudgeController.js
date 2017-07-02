@@ -4,6 +4,7 @@ function DefendantController($rootScope) {
     $rootScope.username = 'Judge Khan';
     $rootScope.userClass = 'khan-icon';
 
+    vm.caseAccpted = false;
     vm.acceptCase = acceptCase;
 
     vm.lhp = {
