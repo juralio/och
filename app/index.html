@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
 
-    <title>HM Online Courts</title>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
-    <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
-    <link rel="stylesheet" href="./assets/app.css"/>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <title>HM Online Courts</title>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css" />
+  <link rel="stylesheet" href="./assets/app.css" />
 </head>
 
 <body ng-cloak layout="column" ng-controller="AppController as app">
 
-<!-- Container #1 (see wireframe) -->
-<md-toolbar layout="row" class="md-toolbar-tools main-header">
-    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
-               aria-label="Show User List">
-        <md-icon md-svg-icon="menu"></md-icon>
+  <!-- Container #1 (see wireframe) -->
+  <md-toolbar layout="row" class="md-toolbar-tools main-header">
+    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()" aria-label="Show User List">
+      <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
     <span class="hm-logo"></span>
     <h1>HM Online Courts</h1>
     <div class="user-container">
-        <span class="user-icon"></span>
-        <h2>{{app.getUsername()}}</h2>
+      <span class="user-icon"></span>
+      <h2>{{app.getUsername()}}</h2>
     </div>
-</md-toolbar>
+  </md-toolbar>
+  <div ng-show="app.isHome()">
+    <md-button class="md-primary" ng-href="#/claimant" target="_self">Claimant</md-button>
+    <md-button class="md-primary" ng-href="#/defendant" target="_self">Defendant</md-button>
+  </div>
+  <!-- Container #2 -->
+  <div flex layout="row" ng-view>
+  </div>
 
-
-<!-- Container #2 -->
-<div flex layout="row" ng-view>
-</div>
-
-<script src="./jspm_packages/system.js" type="text/javascript"></script>
-<script src="config.js" type="text/javascript"></script>
-<script type="text/javascript">
+  <script src="./jspm_packages/system.js" type="text/javascript"></script>
+  <script src="config.js" type="text/javascript"></script>
+  <script type="text/javascript">
     System
-            .import('src/boot/boot')
-            .catch(console.error.bind(console)); // make sure any errors print to console
-</script>
+      .import('src/boot/boot')
+      .catch(console.error.bind(console)); // make sure any errors print to console
+  </script>
 
 </body>
+
 </html>

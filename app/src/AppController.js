@@ -1,11 +1,8 @@
-function AppController($rootScope) {
+function AppController($rootScope, $location) {
   var self = this;
 
-  self.getUsername = getUsername;
-
-  function getUsername() {
-    return $rootScope.username;
-  }
+  self.getUsername = () => $rootScope.username;
+  self.isHome = () => $location.path() === '/';
 }
 
-export default ['$rootScope', AppController];
+export default ['$rootScope', '$location', AppController];
