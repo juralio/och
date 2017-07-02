@@ -102,19 +102,8 @@
   <!-- Container #4 -->
   <md-content flex id="content" ng-show="!vm.submitted">
     <div class="right-content-container">
-      <div class="claimee-container" ng-show="true">
-        <div class="prompt">The claimant is:</div>
-        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Martin Smith</span>
-            </md-card-title-text>
-          </md-card-title>
-        </md-card>
-      </div>
-
       <div class="problem-description-container" ng-show="vm.currentPage > 0">
-        <div class="prompt">Your claim disagreement summary:</div>
+        <div class="prompt">Your response to Claimant's problem:</div>
 
         <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
           </br>
@@ -126,12 +115,13 @@
         </br>
       </div>
       <div class="problem-description-container" ng-show="vm.currentPage > 1">
-        <div class="prompt">Your solution disagreement summary:</div>
+        <div class="prompt">Your response to Claimant's solution:</div>
 
         <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
           </br>
           <div class="address-lines">
             <div>{{vm.solutionDisputeText}}</div>
+            <br>
           </div>
         </md-card>
         </br>
