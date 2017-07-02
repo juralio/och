@@ -23,15 +23,15 @@
                         <br />
                         <div style="padding-left:20px;">
                             <md-radio-group [(ng-model)]="vm.agreeToClaim">
-                                <md-radio-button aria-label="Checkbox 1" value="agree">
+                                <md-radio-button aria-label="Checkbox 1" ng-value="2">
                                     Yes
                                 </md-radio-button>
-                                <md-radio-button aria-label="Checkbox 1" value="false">
+                                <md-radio-button aria-label="Checkbox 1" ng-value="1">
                                     No
                                 </md-radio-button>
                             </md-radio-group>
                         </div>
-                        <div ng-show="vm.agreeToClaim==false">
+                        <div ng-show="vm.agreeToClaim=='1'">
                             something
                         </div>
                         <br/>
