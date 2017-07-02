@@ -1,12 +1,18 @@
 <div flex layout="row">
     <md-content flex id="left-content" style="border-right: 1px solid black;">
-        <div class="view-mode" ng-show="!vm.inCreateMode">
+        <div class="view-mode" ng-show="!vm.inCreateMode && !vm.inWaitingMode">
             <h1>
                 You currently have no active claims
             </h1>
             <md-button class="md-primary md-raised" ng-click="vm.enterCreateClaimMode($event)">
                 Create Claim
             </md-button>
+        </div>
+
+        <div class="wait-mode" ng-show="!vm.inCreateMode && vm.inWaitingMode">
+            <h1>
+                You've successfully notified your claimee.
+            </h1>
         </div>
 
         <div class="create-mode full-height" ng-show="vm.inCreateMode">
@@ -105,8 +111,8 @@
                                 </div>
                             </md-input-container>
                             <div class="button-container">
-                                <md-button class="md-primary md-raised" ng-click="vm.confirmClaimee($event)">
-                                    Submit Claim
+                                <md-button class="md-primary md-raised" ng-click="vm.submitClaim($event)">
+                                    Notify Claim
                                 </md-button>
                             </div>
                         </md-tab>
