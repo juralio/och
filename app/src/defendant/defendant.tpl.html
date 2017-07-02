@@ -12,9 +12,9 @@
     <div class="defendant-wizard full-height" ng-show="!vm.submitted">
       <md-content class="md-padding">
         <md-tabs md-selected="vm.currentPage" md-border-bottom md-autoselect>
-          <md-tab md-active="vm.activeStatus.firstTabActive" ng-disabled="vm.locks.firstTabLock" label="1. Problem">
+          <md-tab md-active="vm.currentPage===0" ng-disabled="vm.locks.firstTabLock" label="1. Problem">
             <br/>
-            <div><b>Problem as summarised by Martin Smith.</b></div>
+            <h1 class="prompt">Problem as summarised by Martin Smith.</h1>
             <br/>
             <div class="block">
               <div>Gold taps were not fitted as agreed.</div>
@@ -56,9 +56,9 @@
               Next Step
             </md-button>
           </md-tab>
-          <md-tab md-active="vm.activeStatus.secondTabActive" ng-disabled="vm.locks.secondTabLock" label="2. Suggested Solution">
+          <md-tab md-active="vm.currentPage===1" label="2. Suggested Solution">
             <br/>
-            <div><b>Solution suggested by Martin Smith.</b></div>
+            <h1 class="prompt">Solution suggested by Martin Smith.</h1>
             <br/>
             <div>Replace taps</div>
             <br/>
@@ -88,7 +88,8 @@
               Next Step
             </md-button>
           </md-tab>
-          <md-tab label="3. Review">
+          <md-tab md-active="vm.currentPage===2" label="3. Review">
+            <h1 class="prompt">Review & Submit</h1>
           <md-button class="md-primary md-raised block" ng-click="vm.sendResponse()">
             Notify Response
           </md-button>
@@ -119,6 +120,7 @@
           </br>
           <div class="address-lines">
             <div>{{vm.claimDisputeText}}</div>
+            <br>
           </div>
         </md-card>
         </br>
