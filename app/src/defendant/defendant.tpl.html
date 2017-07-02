@@ -71,7 +71,7 @@
                 <h3 ng-click="vm.showSolutionText()">If you have an alternative solution, please summarise it</h3>
                 <div ng-show="vm.disagreeSolution.textVisible">
                   <md-input-container>
-                    <textarea ng-model="vm.disagreeSolution.text" required md-maxlength="500" minlength="0"></textarea>
+                    <textarea ng-model="vm.solutionDisputeText" required md-maxlength="500" minlength="0"></textarea>
                   </md-input-container>
                 </div>
               </div>
@@ -100,13 +100,24 @@
       </div>
 
 
-      <div class="problem-description-container" ng-show="vm.currentPage>0">
-        <div class="prompt">Your disagreement summary:</div>
+      <div class="problem-description-container" ng-show="vm.currentPage > 0">
+        <div class="prompt">Your claim disagreement summary:</div>
 
         <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
           </br>
           <div class="address-lines">
             <div>{{vm.claimDisputeText}}</div>
+          </div>
+        </md-card>
+        </br>
+      </div>
+      <div class="problem-description-container" ng-show="vm.currentPage > 1">
+        <div class="prompt">Your solution disagreement summary:</div>
+
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+          </br>
+          <div class="address-lines">
+            <div>{{vm.solutionDisputeText}}</div>
           </div>
         </md-card>
         </br>
