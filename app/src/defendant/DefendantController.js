@@ -34,6 +34,7 @@ function DefendantController($rootScope) {
   vm.tabs = [
     { content: "Claim brought against you by Martin Smith.", summary: "This is some summary information", videoLink: "./assets/taps.mp4"},
     { content: "Solution provided in claim video"},
+    { content: "Review & submit"},
   ];
 
   function next() {
@@ -50,7 +51,7 @@ function DefendantController($rootScope) {
   }
 
   function sendResponse() {
-    alert("you clicked send");
+    vm.submitted = true;
   }
 
   function showClaimText() {
