@@ -134,7 +134,7 @@
         <div class="right-content-container">
             <div class="claimee-container" ng-show="vm.rhp.displayClaimee">
                 <div class="prompt">You are claiming against:</div>
-                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card md-theme-watch>
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline">Bill’s Kitchens Ltd</span>
@@ -153,7 +153,7 @@
             <div class="problem-description-container" ng-show="vm.rhp.displayProblemSummary">
                 <div class="prompt">Summary of the problem:</div>
 
-                <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card ng-if="vm.problemDescription.length > 0 || vm.displayUploadMessage()" md-theme-watch>
                     </br>
                     <div class="address-lines">
                         <div>{{vm.problemDescription}}</div>
@@ -169,8 +169,14 @@
 
             <div class="problem-resolution-container" ng-show="vm.rhp.displayProblemSolution">
                 <div class="prompt">How do you think the problem should be resolved?</div>
-                <div ng-show="vm.coveredInVideo">* I’ve covered this in my video</div>
-                <div ng-show="vm.ownSolution">{{vm.problemSolution}}</div>
+                <md-card ng-if="vm.coveredInVideo > 0 || vm.ownSolution" md-theme-watch>
+                    </br>
+                    <div class="address-lines">
+                        <div ng-show="vm.coveredInVideo">I’ve covered this in my video</div>
+                        <div ng-show="vm.ownSolution" class="top-padding">{{vm.problemSolution}}</div>
+                    </div>
+                    </br>
+                </md-card>
             </div>
         </div>
     </md-content>
