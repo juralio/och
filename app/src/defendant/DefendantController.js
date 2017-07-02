@@ -3,6 +3,7 @@ function DefendantController($rootScope) {
 
   $rootScope.username = 'Bill’s Kitchens Ltd';
   $rootScope.userClass = 'bill-icon';
+  vm.videoTranscript = '"I agreed with Dave the site manager that these taps was going to be gold. They\'re not gold. I need gold taps."';
 
   vm.currentPage = 0;
   vm.sendResponse = sendResponse;
