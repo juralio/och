@@ -6,5 +6,5 @@ https://www.onlinecourtshackathon.com/
  
 They're free to use on a permissive open source basis (MIT license for the code, CC BY 4.0 for the slides).
 
-Based on the Angular Material-Start repository found[here](https://github.com/angular/material-start).
+Based on the Angular Material-Start repository found [here](https://github.com/angular/material-start).
 
